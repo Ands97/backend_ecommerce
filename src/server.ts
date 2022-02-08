@@ -6,6 +6,8 @@ import cors from 'cors';
 import path from 'path';
 
 dotenv.config()
+
+const PORT = process.env.PORT || 3000;
 mongoConnect();
 const server = express();
 
@@ -15,4 +17,4 @@ server.use(express.json())
 server.use(express.urlencoded({extended: true}));
 server.use('/api', ApiRoutes)
 
-server.listen(process.env.PORT);
+server.listen(PORT);
