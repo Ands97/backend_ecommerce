@@ -1,1 +1,1 @@
-web:ts-node src/server.ts
+web: ./node_modules/.bin/tsc --module commonjs --outDir build/ --noImplicitAny --sourceMap --target ES5 lib/index.ts && node build/index.js
