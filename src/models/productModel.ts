@@ -1,40 +1,42 @@
 import { Schema, model, Mongoose, ObjectId } from "mongoose";
-import { StringDecoder } from "string_decoder";
 
 type ProductType = {
-    ProductTitle: string,
-    ProductPrice: number,
-    ProductDescription: string,
-    ProductQuantity: number,
-    ProductCategory: string,
-    ProductSize: string,
-    ProductImage: string,
+    productTitle: string,
+    productPrice: number,
+    productCategory: string,
+    productDescription: string,
+    productDiscount: number,
+    productFinalPrice: number,
+    productImage: string,
 }
 
 const productSchema = new Schema<ProductType>({
-    ProductTitle: {
+    productTitle: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
-    ProductPrice: {
+    productPrice: {
         type: Number,
         required: true,
     },
-    ProductDescription: {
-        type: String
-    },
-    ProductQuantity:{
-        type: Number,
+    productCategory: {
+        type: String,
         required: true
     },
-    ProductCategory: {
+    productDescription: {
         type: String
     },
-    ProductSize: [{
-        type: String
-    }],
-    ProductImage: {
-        type: String
+    productDiscount: {
+        type: Number,
+        default: 0
+    },
+    productFinalPrice:{
+        type: Number,
+    },
+    productImage: {
+        type: String,
+        default: 'http://localhost:4000/images/noImage.jpg'
     },
 });
 
