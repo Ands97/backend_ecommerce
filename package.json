@@ -21,6 +21,7 @@
     "tsc": "^2.0.3",
     "validator": "^13.7.0"
   },
+  "engines": { "node": "16.13.2" },
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
